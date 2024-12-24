@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Plan your tasks efficiently with the Monthly Task Manager. Add, organize, and conquer your daily and monthly goals with ease.">
+    <title>Monthly Task Manager | Organize Today, Conquer Tomorrow</title>
+    <link rel="icon" href="logo.png" type="image/png"> <!-- Add your logo here -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="card text-center mb-3" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">🗓️ To-Do List</h5>
+            <p class="card-text">"Organize today, conquer tomorrow."</p>
+            <button type="button" onclick="showTaskForm()" id="btn" class="btn">Add Task</button>
+        </div>
+    </div>
+  
+    <!-- Task Form (Initially Hidden) -->
+    <div class="add-task-form" id="taskForm" style="display:none;">
+        <div class="card text-center">
+            <div class="card-header"></div>
+            <div class="card-body">
+              <label for="monthSelect">Select Month:</label>
+              <select id="monthSelect">
+                  <option value="">--Select Month--</option>
+                  <option value="January">January</option>
+                  <option value="February">February</option>
+                  <option value="March">March</option>
+                  <option value="April">April</option>
+                  <option value="May">May</option>
+                  <option value="June">June</option>
+                  <option value="July">July</option>
+                  <option value="August">August</option>
+                  <option value="September">September</option>
+                  <option value="October">October</option>
+                  <option value="November">November</option>
+                  <option value="December">December</option>
+              </select>
+              <br>
+              <label for="taskInput">Enter Task:</label>
+              <input type="text" id="taskInput" placeholder="Enter your task" onkeypress="handleKeyPress(event)" />
+              <br>
+              <button onclick="addTask()">Submit Task</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Task display container -->
+    <div class="task-container" id="taskContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
